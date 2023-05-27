@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding:20px;">
+    <h1> Users</h1>
+    <ul id="list"></ul>
+    <h3 id="message"></h3>
+
+    <script>
+
+        var list = document.getElementById('list')
+
+        console.log("jn")
+        var userData = JSON.parse(localStorage.getItem('userData')) || []
+
+        if(userData.length > 0) {
+            userData.forEach(function(data){
+                var li = document.createElement('li')
+                li.innerHTML = `
+                <div style="border:1px solid black;padding:15px;margin:3px;">
+                    Name: ${data.name}<br>
+                    Email: ${data.email}<br>
+                    Phone Number: ${data.phonenumber}<br>
+                </div>
+
+                    `
+                list.appendChild(li)
+            })
+        } else {
+            var m = document.getElementById('message')
+
+            m.innerText = "No data avilable"
+
+        }
+    </script>
+</body>
+</html>
