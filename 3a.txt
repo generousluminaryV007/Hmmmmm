@@ -6,3 +6,25 @@ app.use(express.static('public'))
 app.listen(4000,()=>{
     console.log('Server has started');
 })
+
+
+
+
+Docker Environment 
+Docker install
+Node js install 
+Docker install in VS Code
+file with lowercase like "partb"
+two files in that index.js and Dockerfile
+content in index.js write console.log()
+content in Dockerfile
+FROM node: alpine 
+COPY . /partb
+CMD node /partb/index.js
+
+
+Open Terminal 
+docker --version
+node index.js
+docker build -t partb
+docker images
